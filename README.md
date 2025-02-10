@@ -3,28 +3,43 @@
 # Twitter Data Analysis and Search Engine Project
 
 ## Overview
-The aim of this project is to design and implement a search engine for analyzing Twitter data, leveraging both relational and non-relational databases, caching, and a search application.
+This project represents a comprehensive search engine for Twitter data analysis with some collaborative input from Team 6. The system leverages both relational and non-relational databases, implementing sophisticated caching mechanisms and a robust search application.
+
+## Individual Contribution
+I took the lead in designing and implementing the core components of this project, including:
+- Database architecture and integration
+- Search engine functionality
+- Caching mechanism design
+- Data processing pipeline
+- Application interface development
 
 ## Data Processing
-The given Twitter dataset is processed to generate summaries of user statistics, tweet counts, and other relevant facets. User information is stored in PostgreSQL, a relational datastore. Tweets and retweets are separated into two different files and stored in MongoDB, a non-relational datastore.
+I developed a data processing pipeline for the Twitter dataset that generates comprehensive summaries of user statistics, tweet counts, and other relevant metrics. The system I designed stores user information in PostgreSQL (relational datastore), while tweets and retweets are separated and stored in MongoDB (non-relational datastore).
 
 ## Database Design
-- **PostgreSQL**: User information is stored in PostgreSQL, which provides a robust relational data structure.
-- **MongoDB**: Tweets and retweets are stored in separate collections in MongoDB, allowing for flexible non-relational storage.
+I implemented a dual-database architecture:
+- **PostgreSQL**: Handles user information with a robust relational data structure
+- **MongoDB**: Manages tweets and retweets in separate collections, utilizing flexible non-relational storage
 
-Strategies for efficient data storage and retrieval include:
-- Use of indexing to speed up queries
-- Techniques to manage tweet actions like retweets
+I incorporated several optimization strategies, including:
+- Strategic indexing for query performance
+- Efficient management of tweet actions and retweets
+- Optimized data retrieval patterns
 
 ## Caching Mechanism
-A cache mechanism is implemented to enhance performance for frequently accessed data. The cache uses a Python dictionary, with the following strategies:
-- **Eviction policies**: Supports Least Recently Used (LRU) and a Time-To-Live (TTL) field to prevent stale data.
-- **Checkpointing**: The cache is checkpointed to disk periodically to ensure persistence.
+I designed and implemented a sophisticated cache mechanism using a Python dictionary to enhance performance for frequently accessed data. The cache features:
+- **Eviction policies**: Implementation of Least Recently Used (LRU) and Time-To-Live (TTL) field
+- **Checkpointing**: Periodic cache persistence to disk for reliability
 
 ## Search Application
-The search application allows users to query tweets by keyword, hashtag, or user, with time range filtering. It provides metadata for each tweet, such as:
-- Author
-- Tweet time
-- Retweet counts
+The search application I developed enables users to query tweets by:
+- Keywords
+- Hashtags
+- User handles
+- Time range filtering
 
-Additionally, the application offers drill-down features for more detailed information.
+Each tweet result includes comprehensive metadata:
+- Author information
+- Tweet timestamp
+- Retweet metrics
+- Drill-down capabilities for detailed analysis
